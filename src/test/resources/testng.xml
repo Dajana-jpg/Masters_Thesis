@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Tests">
+    <groups>
+        <define name="smoke"/>
+        <define name="regression"/>
+    </groups>
+    <test name="SmokeTests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.radic.masterthesis.sample.android.PlayersTest.SmokeTest_Players"/>
+            <class name="com.radic.masterthesis.sample.android.SurveyListTest.SmokeTest_Survey"/>
+            <class name="com.radic.masterthesis.sample.android.TeamStatsTest.SmokeTest_TeamStats"/>
+            <class name="com.radic.masterthesis.sample.android.SurveyListTest.FunctionalTest_Survey"/>
+            <class name="com.radic.masterthesis.sample.android.PlayersTest.FunctionalTest_Players"/>
+            <class name="com.radic.masterthesis.sample.android.TeamStatsTest.FunctionalTest_TeamStats"/>
+        </classes>
+    </test>
+</suite>
