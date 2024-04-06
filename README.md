@@ -1,5 +1,5 @@
-# Appium Java 
-Sample project for running tests using Java/TestNG/Appium 
+# Appium Java Selenium README
+Training Helper application > project for running tests using Java/TestNG/Appium 
 
 ## Setting up 
 ### Prerequisites before running the script for Appium setup 
