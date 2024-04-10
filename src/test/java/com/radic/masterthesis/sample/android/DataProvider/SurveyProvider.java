@@ -11,7 +11,7 @@ public class SurveyProvider {
     public final static String GROUP_REGRESSION = "regression";
 
     @DataProvider(name = "Survey")
-    protected static Object[][] serviceOverviewBasic() {
+    protected static Object[][] surveyInput() {
         return new Object[][]{
                 {"Offensive", BigDecimal.valueOf(0.55), "Some note"},
         };
@@ -30,7 +30,8 @@ public class SurveyProvider {
                 {"Offensive", BigDecimal.valueOf(0.55), BigDecimal.valueOf(0.55), "Some note"}
         };
     }
-    @DataProvider(name = "checkSurvey")
+
+    @DataProvider(name = "CheckSurvey")
     protected static Object[][] checkSurvey() {
         return new Object[][]{
                 {"Offensive", BigDecimal.valueOf(0.55), "Some note"}
@@ -69,7 +70,7 @@ public class SurveyProvider {
         };
     }
 
-    @DataProvider(name = "surveyTrainingButton")
+    @DataProvider(name = "SurveyTrainingButton")
     protected static Object[][] surveyTrainingButton() {
         return new Object[][]{
                 {"Offensive", "Defensive", "Physical"}

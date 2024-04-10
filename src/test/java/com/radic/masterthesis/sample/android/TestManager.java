@@ -8,7 +8,10 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -35,7 +38,6 @@ public class TestManager {
         Declaration.setDriver(driver);
     }
 
-
     @AfterSuite
     public void afterAll() {
         Hooks.stopAppiumServer();
@@ -47,6 +49,7 @@ public class TestManager {
         if (null != driver) {
             System.out.println("Close the driver");
             driver.quit();
+            driver = null;
         }
     }
 
@@ -54,15 +57,12 @@ public class TestManager {
         System.out.println(String.format("Create AppiumDriver with appium server with device udid - '%s'", udid));
 
         UiAutomator2Options capabilities = new UiAutomator2Options();
-        //capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android");
         //capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5554");
         capabilities.setCapability("unlockType", "pin");
         capabilities.setCapability("unlockKey", "7354");
         capabilities.setCapability("autoGrantPermissions", true);
-        //https://github.com/appium/appium/issues/15138
-        //element as resource-id
         capabilities.setCapability("disableIdLocatorAutocompletion", true);
         capabilities.setCapability("idleTimeout", 6000);
         capabilities.setCapability("newCommandTimeout", 6000);

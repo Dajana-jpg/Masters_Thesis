@@ -1,9 +1,9 @@
 package com.radic.masterthesis.sample.android.PlayersTest;
 
-import com.radic.masterthesis.sample.android.Declaration;
-import com.radic.masterthesis.sample.android.TestManager;
-import com.radic.masterthesis.sample.android.Message;
 import com.radic.masterthesis.sample.android.DataProvider.PlayerProvider;
+import com.radic.masterthesis.sample.android.Declaration;
+import com.radic.masterthesis.sample.android.Message;
+import com.radic.masterthesis.sample.android.TestManager;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -94,15 +94,15 @@ public class SmokeTest_Players extends TestManager {
                 .perform();
 
         try {
-            wait.until(ExpectedConditions.visibilityOfAllElements(Declaration.playerLocation(stats)));
-            softAssert.assertEquals(Declaration.findPlayerStats(stats), stats);
+            wait.until(ExpectedConditions.visibilityOfAllElements(Declaration.statsLocation(stats)));
+            softAssert.assertEquals(Declaration.findStatsScroll(stats), stats);
 
         } catch (NoSuchElementException e) {
             softAssert.assertEquals(Declaration.findStats(stats), stats);
         }
 
         try {
-            softAssert.assertEquals(Declaration.findPlayerPercentage(percentage), percentage);
+            softAssert.assertEquals(Declaration.findPercentageScroll(percentage), percentage);
 
         } catch (NoSuchElementException e) {
             softAssert.assertEquals(Declaration.findPercentage(percentage), percentage);

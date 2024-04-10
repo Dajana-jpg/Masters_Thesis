@@ -1,9 +1,9 @@
 package com.radic.masterthesis.sample.android.SurveyListTest;
 
+import com.radic.masterthesis.sample.android.DataProvider.SurveyProvider;
 import com.radic.masterthesis.sample.android.Declaration;
 import com.radic.masterthesis.sample.android.Message;
 import com.radic.masterthesis.sample.android.TestManager;
-import com.radic.masterthesis.sample.android.DataProvider.SurveyProvider;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -22,7 +22,7 @@ public class FunctionalTest_Survey extends TestManager {
     public void saveFunctionCheck(String type, BigDecimal concentration, String effortText, String concentrationText, String note) {
 
         Declaration.plusButton();
-        Declaration.getTypeCallLocator(type).click();
+        Declaration.getType(type).click();
         Declaration.getSliders().get(0).sendKeys(concentration.toString());
 
         Declaration.sendKeysToEditText(note);
@@ -46,7 +46,7 @@ public class FunctionalTest_Survey extends TestManager {
         softAssert.assertAll();
     }
 
-    @Test(dataProvider = "checkSurvey", dataProviderClass = SurveyProvider.class, groups = {SurveyProvider.GROUP_REGRESSION})
+    @Test(dataProvider = "CheckSurvey", dataProviderClass = SurveyProvider.class, groups = {SurveyProvider.GROUP_REGRESSION})
     public void checkSurveyDelete(String offensive, BigDecimal concentration, String note) {
         Declaration.plusButton();
 
@@ -73,7 +73,7 @@ public class FunctionalTest_Survey extends TestManager {
     @Test(dataProvider = "Survey", dataProviderClass = SurveyProvider.class, groups = {SurveyProvider.GROUP_REGRESSION})
     public void screenFunctionCancel(String type, BigDecimal concentration, String note) {
         Declaration.plusButton();
-        Declaration.getTypeCallLocator(type);
+        Declaration.getType(type);
         Declaration.getSliders().get(0).sendKeys(concentration.toString());
         Declaration.sendKeysToEditText(note);
         Declaration.clickCancelButton();

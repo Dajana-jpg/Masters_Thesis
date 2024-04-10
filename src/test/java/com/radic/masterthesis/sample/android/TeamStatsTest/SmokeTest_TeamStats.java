@@ -7,7 +7,6 @@ import com.radic.masterthesis.sample.android.TestManager;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -39,26 +38,24 @@ public class SmokeTest_TeamStats extends TestManager {
         softAssert.assertAll();
     }
 
-    @Test(dataProvider = "Team",
-            dataProviderClass = TeamStatsProvider.class,
-            groups = {TeamStatsProvider.GROUP_SMOKE})
+    @Test(dataProvider = "Team", dataProviderClass = TeamStatsProvider.class, groups = {TeamStatsProvider.GROUP_SMOKE})
     public void teamData(String team, String stats, String percentage) {
         SoftAssert softAssert = new SoftAssert();
         wait.until(ExpectedConditions.visibilityOf(Declaration.getTeam(team))).click();
 
         try {
             wait.until(ExpectedConditions.visibilityOfAllElements(Declaration.statsLocation(stats)));
-            softAssert.assertEquals(Declaration.findTeamStats(stats), stats);
+            softAssert.assertEquals(Declaration.findStatsScroll(stats), stats);
 
         } catch (NoSuchElementException e) {
-            softAssert.assertEquals(Declaration.findStatsTeam(stats), stats);
+            softAssert.assertEquals(Declaration.findStats(stats), stats);
         }
 
         try {
-            softAssert.assertEquals(Declaration.findTeamPercentage(percentage), percentage);
+            softAssert.assertEquals(Declaration.findPercentageScroll(percentage), percentage);
 
         } catch (NoSuchElementException e) {
-            softAssert.assertEquals(Declaration.findPercentageTeam(percentage), percentage);
+            softAssert.assertEquals(Declaration.findPercentage(percentage), percentage);
         }
         softAssert.assertAll();
     }

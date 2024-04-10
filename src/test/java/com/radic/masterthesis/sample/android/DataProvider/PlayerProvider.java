@@ -12,7 +12,6 @@ public class PlayerProvider {
     protected static Object[][] menu() {
         return new Object[][]{
                 {"SurveyList", "Players", "Team stats"}
-
         };
     }
 
@@ -35,9 +34,9 @@ public class PlayerProvider {
     protected static Object[][] improvementsTest() {
         return new Object[][]{
                 {"Players"}
-
         };
     }
+
     @DataProvider(name = "PlayerContent")
     protected static Object[][] playerContent() {
         return new Object[][]{

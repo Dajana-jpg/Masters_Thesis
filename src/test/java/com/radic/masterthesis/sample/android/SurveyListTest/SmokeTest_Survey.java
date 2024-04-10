@@ -1,8 +1,8 @@
 package com.radic.masterthesis.sample.android.SurveyListTest;
 
+import com.radic.masterthesis.sample.android.DataProvider.SurveyProvider;
 import com.radic.masterthesis.sample.android.Declaration;
 import com.radic.masterthesis.sample.android.TestManager;
-import com.radic.masterthesis.sample.android.DataProvider.SurveyProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -18,7 +18,7 @@ public class SmokeTest_Survey extends TestManager {
     public void trainingText(String type) {
 
         Declaration.plusButton();
-        WebElement typeCall = Declaration.getTypeCallLocator(type);
+        WebElement typeCall = Declaration.getType(type);
         System.out.println("Found: " + typeCall);
     }
 
@@ -35,7 +35,7 @@ public class SmokeTest_Survey extends TestManager {
         Assert.assertEquals(empty.get(0).getText(), emptyText);
     }
 
-    @Test(dataProvider = "surveyTrainingButton", dataProviderClass = SurveyProvider.class, groups = {SurveyProvider.GROUP_SMOKE})
+    @Test(dataProvider = "SurveyTrainingButton", dataProviderClass = SurveyProvider.class, groups = {SurveyProvider.GROUP_SMOKE})
     public void trainingButtons(String offensive, String defensive, String physical) {
         Declaration.plusButton();
         Declaration.getOffensive(offensive).click();

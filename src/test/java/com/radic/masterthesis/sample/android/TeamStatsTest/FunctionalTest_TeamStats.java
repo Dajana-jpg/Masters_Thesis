@@ -1,8 +1,8 @@
 package com.radic.masterthesis.sample.android.TeamStatsTest;
 
+import com.radic.masterthesis.sample.android.DataProvider.TeamStatsProvider;
 import com.radic.masterthesis.sample.android.Declaration;
 import com.radic.masterthesis.sample.android.TestManager;
-import com.radic.masterthesis.sample.android.DataProvider.TeamStatsProvider;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;

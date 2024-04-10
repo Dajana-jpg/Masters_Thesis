@@ -1,9 +1,9 @@
 package com.radic.masterthesis.sample.android.PlayersTest;
 
-import com.radic.masterthesis.sample.android.Declaration;
-import com.radic.masterthesis.sample.android.TestManager;
-import com.radic.masterthesis.sample.android.Message;
 import com.radic.masterthesis.sample.android.DataProvider.PlayerProvider;
+import com.radic.masterthesis.sample.android.Declaration;
+import com.radic.masterthesis.sample.android.Message;
+import com.radic.masterthesis.sample.android.TestManager;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -35,7 +35,7 @@ public class FunctionalTest_Players extends TestManager {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(improvementButton)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.id("android:id/content")));
-        softAssert.assertEquals(Declaration.titleLocatorPlayers().getText(), Message.IMPROVEMENTS);
+        softAssert.assertEquals(Declaration.titleLocator().getText(), Message.IMPROVEMENTS);
         softAssert.assertEquals(Declaration.textLocator().getText(), Message.STRING, Message.IS_A_KNOWN_BUG);
 
         softAssert.assertAll();

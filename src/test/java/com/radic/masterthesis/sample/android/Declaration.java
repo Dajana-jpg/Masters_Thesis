@@ -4,8 +4,6 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -18,9 +16,11 @@ public class Declaration extends TestManager {
         driver = appiumDriver;
     }
 
-    public static void plusButton() { driver.findElements(By.className("android.widget.Button")).get(0).click(); }
+    public static void plusButton() {
+        driver.findElements(By.className("android.widget.Button")).get(0).click();
+    }
 
-    public static WebElement getTypeCallLocator(String type) {
+    public static WebElement getType(String type) {
         return driver.findElement(By.xpath("//android.widget.TextView[@text='" + type + "']"));
     }
 
@@ -74,11 +74,6 @@ public class Declaration extends TestManager {
         return driver.findElement(AppiumBy.id("improvements_alert_dialog_title"));
     }
 
-    public static WebElement titleLocatorPlayers() {
-        return driver.findElement(AppiumBy.id("improvements_alert_dialog_title"));
-    }
-
-
     public static WebElement textLocator() {
         return driver.findElement(AppiumBy.id("improvements_alert_dialog_text"));
     }
@@ -110,36 +105,24 @@ public class Declaration extends TestManager {
     public static By playerDOB() {
         return AppiumBy.id("player_card_dob");
     }
-    public static String findPlayerStats(String stats) {
-      return driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + stats + "\"))")).getText();
-    }
-    public static String findStats(String stats){
-        return driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + stats + "\")")).getText();
-    }
-    public static String findPlayerPercentage(String percentage){
-        return driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + percentage + "\"))")).getText();
-    }
-    public static String findPercentage(String percentage){
-        return driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + percentage + "\")")).getText();
-    }
-    public static String findTeamPercentage(String percentage){
-        return driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + percentage + "\"))")).getText();
-    }
-    public static String findPercentageTeam(String percentage){
-        return driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + percentage + "\")")).getText();
-    }
-    public static String findTeamStats(String stats) {
+
+    public static String findStatsScroll(String stats) {
         return driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + stats + "\"))")).getText();
     }
-    public static String findStatsTeam(String stats){
+
+    public static String findStats(String stats) {
         return driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + stats + "\")")).getText();
+    }
+
+    public static String findPercentageScroll(String percentage) {
+        return driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + percentage + "\"))")).getText();
+    }
+
+    public static String findPercentage(String percentage) {
+        return driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + percentage + "\")")).getText();
     }
 
     public static WebElement statsLocation(String stats) {
         return driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + stats + "\"))"));
-    }
-    public static WebElement playerLocation(String stats){
-        return driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + stats + "\"))"));
-
     }
 }
