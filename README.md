@@ -43,8 +43,8 @@ This project includes the following tests implemented for Android & iOS devices:
 
 > Important directories
 
+![image](https://github.com/Dajana-jpg/Masters_Thesis/assets/80062808/7fc48215-4f50-43d3-b9aa-748c983f5a54)
 
-![image](https://github.com/Dajana-jpg/Masters_Thesis/assets/80062808/d4910a4e-e72a-4bd9-b706-cd2e06c890c4)
 
 
 * android -> the most important package. Has all the tests and helper classes in itself.
