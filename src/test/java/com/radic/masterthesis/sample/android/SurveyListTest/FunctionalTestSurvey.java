@@ -15,7 +15,7 @@ import org.testng.asserts.SoftAssert;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class FunctionalTest_Survey extends TestManager {
+public class FunctionalTestSurvey extends TestManager {
     SoftAssert softAssert = new SoftAssert();
 
     @Test(dataProvider = "DataCheck", dataProviderClass = SurveyProvider.class, groups = {SurveyProvider.GROUP_REGRESSION})

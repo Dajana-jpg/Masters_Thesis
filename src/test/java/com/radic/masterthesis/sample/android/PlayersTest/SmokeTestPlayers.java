@@ -17,7 +17,7 @@ import org.testng.asserts.SoftAssert;
 import java.util.List;
 
 
-public class SmokeTest_Players extends TestManager {
+public class SmokeTestPlayers extends TestManager {
     @Test(dataProvider = "Menu",
             dataProviderClass = PlayerProvider.class,
             groups = {PlayerProvider.GROUP_SMOKE})

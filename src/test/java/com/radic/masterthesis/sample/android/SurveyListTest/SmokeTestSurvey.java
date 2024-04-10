@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 
-public class SmokeTest_Survey extends TestManager {
+public class SmokeTestSurvey extends TestManager {
 
     @Test(dataProvider = "TextTest", dataProviderClass = SurveyProvider.class, groups = {SurveyProvider.GROUP_SMOKE})
     public void trainingText(String type) {

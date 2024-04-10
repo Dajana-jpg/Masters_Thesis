@@ -12,12 +12,12 @@
             </run>
         </groups>
         <classes>
-            <class name="com.radic.masterthesis.sample.android.PlayersTest.SmokeTest_Players"/>
-            <class name="com.radic.masterthesis.sample.android.SurveyListTest.SmokeTest_Survey"/>
-            <class name="com.radic.masterthesis.sample.android.TeamStatsTest.SmokeTest_TeamStats"/>
-            <class name="com.radic.masterthesis.sample.android.SurveyListTest.FunctionalTest_Survey"/>
-            <class name="com.radic.masterthesis.sample.android.PlayersTest.FunctionalTest_Players"/>
-            <class name="com.radic.masterthesis.sample.android.TeamStatsTest.FunctionalTest_TeamStats"/>
+            <class name="com.radic.masterthesis.sample.android.PlayersTest.SmokeTestPlayers"/>
+            <class name="com.radic.masterthesis.sample.android.SurveyListTest.SmokeTestSurvey"/>
+            <class name="com.radic.masterthesis.sample.android.TeamStatsTest.SmokeTestTeamStats"/>
+            <class name="com.radic.masterthesis.sample.android.SurveyListTest.FunctionalTestSurvey"/>
+            <class name="com.radic.masterthesis.sample.android.PlayersTest.FunctionalTestPlayers"/>
+            <class name="com.radic.masterthesis.sample.android.TeamStatsTest.FunctionalTestTeamStats"/>
         </classes>
     </test>
 </suite>

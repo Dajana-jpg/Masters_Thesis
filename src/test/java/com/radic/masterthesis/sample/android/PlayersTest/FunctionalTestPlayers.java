@@ -15,7 +15,7 @@ import org.testng.asserts.SoftAssert;
 import java.util.List;
 
 
-public class FunctionalTest_Players extends TestManager {
+public class FunctionalTestPlayers extends TestManager {
     @Test(dataProvider = "improvementsTest", dataProviderClass = PlayerProvider.class, groups = {PlayerProvider.GROUP_REGRESSION})
     public void improvements(String player) {
         SoftAssert softAssert = new SoftAssert();

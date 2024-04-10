@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class SmokeTest_TeamStats extends TestManager {
+public class SmokeTestTeamStats extends TestManager {
 
     @Test(dataProvider = "Menu", dataProviderClass = TeamStatsProvider.class, groups = {TeamStatsProvider.GROUP_SMOKE})
     public void smokeTestNavigation(String survey, String player, String team) {

@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
-public class FunctionalTest_TeamStats extends TestManager {
+public class FunctionalTestTeamStats extends TestManager {
 
     @Test(dataProvider = "TeamMenu",
             dataProviderClass = TeamStatsProvider.class,
