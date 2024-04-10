@@ -7,28 +7,32 @@ Training Helper application > project for running tests using Java/TestNG/Appium
 
 * Set `ANDROID_HOME` as an environment variable - pointing to the directory where Android SDK should be setup
 
-* Execute the following scripts to setup your Mac [setup_mac.sh](setup_mac.sh) or Ubuntu [setup_linux.sh](setup_linux.sh) machine automatically 
-> The above script will install all dependencies required for implementing / running tests on Android devices. To do the setup for iOS devices, run `appium-doctor` and see the list of dependencies that are missing, and install the same.
-
-> You may be prompted for password or confirmations along the way 
-
 ## Running the tests
 ### Prerequisites:
 * Start appium server manually (and update the url/port if not using the default)
 * Have devices connected / emulators started. Accordingly, update the (.*Test.java) test file with the relevant information about the devices
 
 ### Tests
-This project includes the following tests implemented for Android & iOS devices:
+This project includes the following tests implemented for Android devices:
 
 #### Android
-* [AppiumNativeAndroidMessagesTest.java](src/test/java/com/eot/sample/android/AppiumNativeAndroidMessagesTest.java) - run an Appium test against the Messages app
-* [AppiumNativeAndroidParallelCalcTest.java](src/test/java/com/eot/sample/android/AppiumNativeAndroidParallelCalcTest.java) - run 2 Appium tests, in parallel, using testng
-* [AppiumWebAndroidHelloWorldTest.java](src/test/java/com/eot/sample/android/AppiumWebAndroidHelloWorldTest.java) - runs an appium test against a Chrome browser (mobile-web) in the connected device
+> Test classes:
+* src/test/java/com/radic/masterthesis/sample/android/PlayersTest/FunctionalTestPlayers.java - Tests regarding Players screen.
+* src/test/java/com/radic/masterthesis/sample/android/PlayersTest/SmokeTestPlayers.java - Tests regarding Players screen.
+* src/test/java/com/radic/masterthesis/sample/android/SurveyListTest/FunctionalTestSurvey.java - Tests regarding Survey screen.
+* src/test/java/com/radic/masterthesis/sample/android/SurveyListTest/SmokeTestSurvey.java - Tests regarding Survey Screen.
+* src/test/java/com/radic/masterthesis/sample/android/TeamStatsTest/FunctionalTestTeamStats.java - Tests regarding Team statistics screen
+* src/test/java/com/radic/masterthesis/sample/android/TeamStatsTest/SmokeTestTeamStats.java - Tests regarding Team statistics screen
 
-#### iOS
-* [AppiumNativeiOSHelloWorldTest.java](src/test/java/com/eot/sample/ios/AppiumNativeiOSHelloWorldTest.java) - run an Appium test against the Messages app
-* [AppiumWebiOSHelloWorldTest.java](src/test/java/com/eot/sample/ios/AppiumWebiOSHelloWorldTest.java) - run 2 Appium tests, in parallel, using testng
-
+  > Helper classes:
+  * src/test/java/com/radic/masterthesis/sample/android/Declaration.java - Declaration helper class
+  * src/test/java/com/radic/masterthesis/sample/android/Message.java - Message helper class
+  * src/test/java/com/radic/masterthesis/sample/android/TestManager.java - Test Manager helper class
+> Test data:
+* src/test/java/com/radic/masterthesis/sample/android/DataProvider/PlayerProvider.java
+* src/test/java/com/radic/masterthesis/sample/android/DataProvider/SurveyProvider.java
+* src/test/java/com/radic/masterthesis/sample/android/DataProvider/TeamStatsProvider.java
+ 
 ## Starting with the project
 
 * first step is 
